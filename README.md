@@ -61,6 +61,6 @@ Empowering users with **data-driven recommendations** to optimize content across
 
 | Role | Contributor | Focus Area |
 |------|------------|------------|
-| **Frontend and UI** | Bharat & Nagmani|
+| **Frontend and UI** | Bharat & Shivam | React Optimization |
 | **Backend and Database** | Shivam & Nagmani | Backend Development |
-| **AI and LLM** | Bharat | LLM Fine-Tuning |
+| **AI and LLM** | Nagmani & Bharat | LLM Fine-Tuning |
