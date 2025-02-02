@@ -1,4 +1,4 @@
-# Viral Salah 📊
+# Viral Salah
 
 An AI-driven SaaS platform that transforms social media engagement data into actionable strategies for influencers, startups, and businesses.
 
@@ -44,20 +44,10 @@ Empowering users with **data-driven recommendations** to optimize content across
 
 ## 🛠 Tech Stack
 
-### **Frontend**  
-![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)  
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)  
-
-### **Backend**  
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)  
-![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)  
-
-### **Database**  
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)  
-
-### **AI & Machine Learning**  
-![HuggingFace](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=black)  
+**Frontend:** ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)  
+**Backend:** ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)  
+**Database:** ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)  
+**AI & Machine Learning:** ![HuggingFace](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=black)  
 
 ---
 
@@ -71,15 +61,6 @@ Empowering users with **data-driven recommendations** to optimize content across
 
 | Role | Contributor | Focus Area |
 |------|------------|------------|
-| **Frontend Lead** | Bharat | React Optimization |
-| **Backend Lead** | Shivam & Nagmani | Backend Development |
-| **AI Architect** | Bharat | LLM Fine-Tuning |
-| **Product Owners** | Nagmani & Shivam | User Experience & Strategy |
-
----
-
-### 🚀 Join Us
-If you're passionate about AI, social media analytics, or SaaS development, feel free to contribute or reach out!
-
-📧 Contact: [Your Email]  
-🌐 Website: [Your Website]  
+| **Frontend and UI** | Bharat & Nagmani|
+| **Backend and Database** | Shivam & Nagmani | Backend Development |
+| **AI and LLM** | Bharat | LLM Fine-Tuning |
