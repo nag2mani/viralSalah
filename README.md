@@ -51,12 +51,6 @@ Empowering users with **data-driven recommendations** to optimize content across
 
 ---
 
-## 📄 References
-
-- **Project Proposal**: [View Here](https://docs.google.com/document/d/1S6cZOB1xdbe9N1nJMfyxUonzm4t5GH26favSDsN-2no/edit?usp=sharing)  
-- **Hackathon Document**: [View Here](https://drive.google.com/file/d/1YjPdEQsdq3aYShQPnPxlHFKQdTq2-sB8/view?usp=sharing)
----
-
 ## 👨‍💻 Team
 
 | Role | Contributor | Focus Area |
@@ -64,3 +58,10 @@ Empowering users with **data-driven recommendations** to optimize content across
 | **Frontend and UI** | Bharat & Shivam | React Optimization |
 | **Backend and Database** | Shivam & Nagmani | Backend Development |
 | **AI and LLM** | Nagmani & Bharat | LLM Fine-Tuning |
+
+---
+
+## 📄 References
+
+- **Project Proposal**: [View Here](https://docs.google.com/document/d/1S6cZOB1xdbe9N1nJMfyxUonzm4t5GH26favSDsN-2no/edit?usp=sharing)  
+- **Hackathon Document**: [View Here](https://drive.google.com/file/d/1YjPdEQsdq3aYShQPnPxlHFKQdTq2-sB8/view?usp=sharing)
