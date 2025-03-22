@@ -1,0 +1,81 @@
+.full-width-container {
+    width: 100vw;
+    margin: 0;
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .btn-primary {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #357abd;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #4a90e2;
+    color: #4a90e2;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .divider {
+    border: 1px solid #e0e0e0;
+    margin: 2rem 0;
+  }
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .features-list li {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 0.5rem;
+  }

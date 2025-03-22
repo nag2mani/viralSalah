@@ -1,13 +1,11 @@
-import './App.css'
-
+import React from 'react';
+import MainComponent from './components/homecomponent/MainComponent';
 function App() {
   return (
-    <>
-    <div>
-      I am ViralSalah
-    </div>
-    </>
-  )
+   <>
+   <MainComponent/>
+   </>
+  );
 }
 
 export default App;

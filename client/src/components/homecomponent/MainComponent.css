@@ -1,0 +1,21 @@
+/* MainComponent.css */
+.main-container {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  @media (max-width: 768px) {
+    .button-group {
+      flex-direction: column;
+    }
+    
+    .stats-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .header-frame h1 {
+      font-size: 2rem;
+    }
+  }
