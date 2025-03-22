@@ -1,4 +1,4 @@
-// HeaderFrame.js
+
 import React from 'react';
 import './HeaderFrame.css';
 

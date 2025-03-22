@@ -1,4 +1,4 @@
-// ContentFrame.js
+
 import React from 'react';
 import './ContentFrame.css';
 

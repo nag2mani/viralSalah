@@ -1,4 +1,4 @@
-// MainComponent.js
+
 import React from 'react';
 import HeaderFrame from './HeaderFrame';
 import ContentFrame from './ContentFrame';
