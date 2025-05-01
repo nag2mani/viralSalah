@@ -1,75 +1,68 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataTrendingPosts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 
-const Contacts = () => {
+const TrendingPosts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "id", headerName: "ID", flex: 0.3, minWidth: 60 },
     {
-      field: "name",
-      headerName: "Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
+      field: "title",
+      headerName: "Post Title",
+      flex: 1.5,
+      minWidth: 200,
     },
     {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
+      field: "author",
+      headerName: "Author",
+      flex: 1,
+      minWidth: 150,
     },
     {
-      field: "phone",
-      headerName: "Phone Number",
+      field: "niche",
+      headerName: "Niche",
       flex: 1,
+      minWidth: 120,
     },
     {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
+      field: "likes",
+      headerName: "Likes",
+      flex: 0.7,
+      minWidth: 90,
     },
     {
-      field: "address",
-      headerName: "Address",
-      flex: 1,
+      field: "comments",
+      headerName: "Comments",
+      flex: 0.7,
+      minWidth: 90,
     },
     {
-      field: "city",
-      headerName: "City",
-      flex: 1,
-    },
-    {
-      field: "zipCode",
-      headerName: "Zip Code",
-      flex: 1,
+      field: "shares",
+      headerName: "Shares",
+      flex: 0.7,
+      minWidth: 90,
     },
   ];
 
   return (
     <Box m="20px">
-      <Header
-        title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
-      />
+      <Header title="Top 11 Trending Posts on LinkedIn" />
       <Box
-        m="40px 0 0 0"
+        m="40px auto 0 auto"
         height="75vh"
+        width="100%"
+        maxWidth="1200px"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
           },
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],
@@ -79,8 +72,7 @@ const Contacts = () => {
             backgroundColor: colors.primary[400],
           },
           "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
+            display: "none",
           },
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
@@ -91,13 +83,14 @@ const Contacts = () => {
         }}
       >
         <DataGrid
-          rows={mockDataContacts}
+          rows={mockDataTrendingPosts}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
+          hideFooter
         />
       </Box>
     </Box>
   );
 };
 
-export default Contacts;
+export default TrendingPosts;
