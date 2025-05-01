@@ -65,4 +65,5 @@ Empowering users with **data-driven recommendations** to optimize content across
 
 - **Project Proposal**: [View Here](https://docs.google.com/document/d/1S6cZOB1xdbe9N1nJMfyxUonzm4t5GH26favSDsN-2no/edit?usp=sharing)  
 - **System Design Doc**: [View Here](https://docs.google.com/document/d/1hc2jMq0CeU_jKcLI3MIkdtkiwNogrT5DXpp9Px9MAPc/edit?tab=t.0)  
+- **Report Doc**: [View Here](https://docs.google.com/document/d/12qMwBC2HN2W3Vk1heZ3DqwSQzd6NAjMkebWmpgmWxJY/edit?usp=sharing)  
 - **Reference Doc**: [View Here](https://drive.google.com/file/d/1YjPdEQsdq3aYShQPnPxlHFKQdTq2-sB8/view?usp=sharing)
