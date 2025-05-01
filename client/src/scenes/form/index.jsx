@@ -5,7 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { useState } from "react";
 
-// ⛳ Gemini API call (you can later move this to a separate utils file)
+// ⛳ Gemini API call
 const generatePostWithGemini = async ({ title, context, tone }) => {
   const prompt = `
     Write a LinkedIn post with the following:
@@ -17,28 +17,34 @@ const generatePostWithGemini = async ({ title, context, tone }) => {
 
   const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
 
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }]
-    }),
-  });
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+      }),
+    }
+  );
 
   const data = await response.json();
   return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Failed to generate post.";
 };
 
-
 const PostCreation = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const [generatedPost, setGeneratedPost] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleFormSubmit = async (values, { setSubmitting }) => {
+    setLoading(true);
+    setGeneratedPost("");
     const generated = await generatePostWithGemini(values);
     setGeneratedPost(generated);
+    setLoading(false);
     setSubmitting(false);
   };
 
@@ -58,7 +64,7 @@ const PostCreation = () => {
           handleBlur,
           handleChange,
           handleSubmit,
-          isSubmitting
+          isSubmitting,
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
@@ -117,7 +123,15 @@ const PostCreation = () => {
         )}
       </Formik>
 
-      {generatedPost && (
+      {loading && (
+        <Box mt="40px" p="20px" bgcolor="#1f2a40" borderRadius="10px">
+          <Typography variant="h6" color="secondary">
+            Generating post... Please wait.
+          </Typography>
+        </Box>
+      )}
+
+      {generatedPost && !loading && (
         <Box mt="40px" p="20px" bgcolor="#1f2a40" borderRadius="10px">
           <Typography variant="h5" gutterBottom>
             Generated Post
