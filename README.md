@@ -2,6 +2,8 @@
 
 An AI-driven SaaS platform that transforms social media engagement data into actionable strategies for influencers, startups, and businesses.
 
+![image](https://github.com/user-attachments/assets/9c176dfe-59d1-46be-ae3c-9fbd533b979f)
+
 ---
 
 ## 🚀 Purpose
