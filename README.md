@@ -60,9 +60,11 @@ To **supercharge your LinkedIn presence** with a unified dashboard that helps yo
 
 ## 👨‍💻 Team
 
-Nagmani Kumar [Team Lead] - Frontend, Backend, and LLM Integration
-Shivam Kumar - Frontend, UI, Database, and deployment
-Bharat Suthar - Backend Development, Architecture, Market Research, and analysis
+**Nagmani Kumar [Team Lead]** - Frontend, Backend, and LLM Integration
+
+**Shivam Kumar** - Frontend, UI, Database, and deployment
+
+**Bharat Suthar** - Backend Development, Architecture, Market Research, and analysis
 
 ---
 
