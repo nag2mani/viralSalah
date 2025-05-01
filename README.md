@@ -60,11 +60,9 @@ To **supercharge your LinkedIn presence** with a unified dashboard that helps yo
 
 ## 👨‍💻 Team
 
-| Role                  | Contributor     | Focus Area            |
-|-----------------------|-----------------|------------------------|
-| **Frontend/UI**       | Bharat & Shivam | Data visualization, React |
-| **Backend & DB**      | Shivam & Nagmani | LinkedIn data pipelines |
-| **AI & Insights**     | Nagmani & Bharat | Trend prediction & LLM |
+Nagmani Kumar [Team Lead] - Frontend, Backend, and LLM Integration
+Shivam Kumar - Frontend, UI, Database, and deployment
+Bharat Suthar - Backend Development, Architecture, Market Research, and analysis
 
 ---
 
