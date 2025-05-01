@@ -15,7 +15,9 @@ const generatePostWithGemini = async ({ title, context, tone }) => {
     Format it as a complete engaging LinkedIn post.
   `;
 
-  const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=YOUR_API_KEY", {
+  const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -28,6 +30,7 @@ const generatePostWithGemini = async ({ title, context, tone }) => {
   const data = await response.json();
   return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Failed to generate post.";
 };
+
 
 const PostCreation = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
