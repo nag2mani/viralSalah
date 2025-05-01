@@ -130,7 +130,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Engagement Over Time
+                Engagement Over Last 90 Days
               </Typography>
             </Box>
           </Box>

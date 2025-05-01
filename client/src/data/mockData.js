@@ -352,7 +352,7 @@ export const mockDataInvoices = [
 
 export const mockPosts = [
   {
-    postId: "post01",
+    postId: "How I Built a SaaS Startup in College",
     date: "2023-09-01",
     time: "09:15 AM",
     likes: 124,
@@ -360,7 +360,7 @@ export const mockPosts = [
     impressions: "4,395",
   },
   {
-    postId: "post02",
+    postId: "How AI Is Replacing Tasks, Not People",
     date: "2024-04-01",
     time: "02:45 PM",
     likes: 510,
@@ -368,7 +368,7 @@ export const mockPosts = [
     impressions: "13,345",
   },
   {
-    postId: "post03",
+    postId: "Why Networking Is the New Resume",
     date: "2023-09-01",
     time: "11:30 AM",
     likes: 132,
@@ -376,7 +376,7 @@ export const mockPosts = [
     impressions: "4,395",
   },
   {
-    postId: "post04",
+    postId: "Why Personal Branding Matters in 2025",
     date: "2024-11-05",
     time: "06:00 PM",
     likes: 895,
@@ -384,7 +384,7 @@ export const mockPosts = [
     impressions: "20,095",
   },
   {
-    postId: "post05",
+    postId: "From 0 to 10k Followers: What Actually Worked",
     date: "2024-11-02",
     time: "10:10 AM",
     likes: 65,
@@ -392,7 +392,7 @@ export const mockPosts = [
     impressions: "1,355",
   },
   {
-    postId: "post06",
+    postId: "ChatGPT Changed My Career Path—Here’s How",
     date: "2023-09-01",
     time: "08:00 AM",
     likes: 124,
@@ -400,7 +400,7 @@ export const mockPosts = [
     impressions: "4,395",
   },
   {
-    postId: "post07",
+    postId: "Why Everyone Needs an Online Portfolio in 2025",
     date: "2021-04-15",
     time: "07:45 AM",
     likes: 43,
@@ -408,7 +408,7 @@ export const mockPosts = [
     impressions: "2,420",
   },
   {
-    postId: "post08",
+    postId: "The Rise of Solopreneurs: A Shift You Can’t Ignore",
     date: "2024-04-01",
     time: "03:30 PM",
     likes: 510,

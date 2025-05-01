@@ -147,17 +147,17 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Create Post"
-              // to="/create-post"
-              to="/form"
-              icon={<EditNoteOutlinedIcon />}
+              title="Schedule Post"
+              to="/calendar"
+              icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
-              to="/calendar"
-              icon={<CalendarTodayOutlinedIcon />}
+              title="Create Post"
+              // to="/create-post"
+              to="/form"
+              icon={<EditNoteOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -169,7 +169,6 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
           </Box>
-          
         </Menu>
       </ProSidebar>
     </Box>

@@ -1,51 +1,90 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, CircularProgress } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { useState } from "react";
 
-// ⛳ Gemini API call
+// Define validation schema and initial values first
+const postSchema = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  context: yup.string().required("Context is required"),
+  tone: yup.string().required("Tone is required"),
+});
+
+const initialValues = {
+  title: "",
+  context: "",
+  tone: "",
+};
+
+// Gemini API call
 const generatePostWithGemini = async ({ title, context, tone }) => {
-  const prompt = `
-    Write a LinkedIn post with the following:
-    - Title/Topic: ${title}
-    - Context: ${context}
-    - Tone: ${tone}
-    Format it as a complete engaging LinkedIn post.
-  `;
+  try {
+    const prompt = `
+      Write a LinkedIn post with the following:
+      - Title/Topic: ${title}
+      - Context: ${context}
+      - Tone: ${tone}
+      Format it as a complete engaging LinkedIn post.
+    `;
 
-  const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+        }),
+      }
+    );
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-      }),
+    if (!response.ok) {
+      throw new Error(`API request failed with status ${response.status}`);
     }
-  );
 
-  const data = await response.json();
-  return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Failed to generate post.";
+    const data = await response.json();
+    
+    if (!data?.candidates?.[0]?.content?.parts?.[0]?.text) {
+      throw new Error("No text generated in the response");
+    }
+    
+    return data.candidates[0].content.parts[0].text;
+  } catch (error) {
+    console.error("Error generating post:", error);
+    return `Failed to generate post. Error: ${error.message}`;
+  }
 };
 
 const PostCreation = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const [generatedPost, setGeneratedPost] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleFormSubmit = async (values, { setSubmitting }) => {
-    setLoading(true);
-    setGeneratedPost("");
-    const generated = await generatePostWithGemini(values);
-    setGeneratedPost(generated);
-    setLoading(false);
-    setSubmitting(false);
+    try {
+      setLoading(true);
+      setGeneratedPost("");
+      setError("");
+      
+      const generated = await generatePostWithGemini(values);
+      
+      if (generated.startsWith("Failed to generate post")) {
+        setError(generated);
+      } else {
+        setGeneratedPost(generated);
+      }
+    } catch (err) {
+      setError(`Error: ${err.message}`);
+      console.error("Form submission error:", err);
+    } finally {
+      setLoading(false);
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -115,8 +154,14 @@ const PostCreation = () => {
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained" disabled={isSubmitting}>
-                Generate Post
+              <Button 
+                type="submit" 
+                color="secondary" 
+                variant="contained" 
+                disabled={isSubmitting || loading}
+                startIcon={loading && <CircularProgress size={20} color="inherit" />}
+              >
+                {loading ? "Generating..." : "Generate Post"}
               </Button>
             </Box>
           </form>
@@ -131,28 +176,36 @@ const PostCreation = () => {
         </Box>
       )}
 
-      {generatedPost && !loading && (
+      {error && !loading && (
+        <Box mt="40px" p="20px" bgcolor="#f44336" borderRadius="10px">
+          <Typography variant="h6" color="white">
+            Error
+          </Typography>
+          <Typography color="white">{error}</Typography>
+        </Box>
+      )}
+
+      {generatedPost && !loading && !error && (
         <Box mt="40px" p="20px" bgcolor="#1f2a40" borderRadius="10px">
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" color="white" gutterBottom>
             Generated Post
           </Typography>
-          <Typography whiteSpace="pre-line">{generatedPost}</Typography>
+          <Typography color="white" whiteSpace="pre-line">{generatedPost}</Typography>
+          <Box display="flex" justifyContent="end" mt="20px">
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={() => {
+                navigator.clipboard.writeText(generatedPost);
+              }}
+            >
+              Copy to Clipboard
+            </Button>
+          </Box>
         </Box>
       )}
     </Box>
   );
-};
-
-const postSchema = yup.object().shape({
-  title: yup.string().required("Title is required"),
-  context: yup.string().required("Context is required"),
-  tone: yup.string().required("Tone is required"),
-});
-
-const initialValues = {
-  title: "",
-  context: "",
-  tone: "",
 };
 
 export default PostCreation;
