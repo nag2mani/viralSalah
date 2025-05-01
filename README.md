@@ -38,18 +38,6 @@ To **supercharge your LinkedIn presence** with a unified dashboard that helps yo
 
 ---
 
-## 📊 Sample Metrics from Dashboard
-
-- **Posts Published:** 61
-- **Impressions Gained:** 31,225
-- **New Followers:** 1,290
-- **Profile Visits:** 134
-- **Recent Post Performance:**
-  - *"How AI Is Replacing Tasks, Not People"*: 510 Likes, 112 Comments, 13.3k Views
-  - *"How I Built a SaaS Startup in College"*: 124 Likes, 48 Comments, 4.4k Views
-
----
-
 ## 👥 User Segmentation
 
 | User Type         | Pain Points                                | Our Solution                                      |
